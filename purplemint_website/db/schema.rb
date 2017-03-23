@@ -13,13 +13,12 @@
 ActiveRecord::Schema.define(version: 20170323182704) do
 
   create_table "events", force: :cascade do |t|
-    t.string   "new"
-    t.string   "create"
-    t.string   "edit"
-    t.string   "update"
-    t.string   "delete"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.text     "description"
+    t.datetime "date"
+    t.string   "image"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

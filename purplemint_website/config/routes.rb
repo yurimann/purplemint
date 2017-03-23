@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :contact_forms
 
   resources :events
-  root 'users#index'
+  root 'events#index'
   resources :sessions, only: [:new, :create, :destroy]
 
   resources :password_resets

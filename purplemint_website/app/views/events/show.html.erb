@@ -1,29 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>New:</strong>
-  <%= @event.new %>
+  <strong>Name:</strong>
+  <%= @event.name %>
 </p>
 
 <p>
-  <strong>Create:</strong>
-  <%= @event.create %>
+    <%= image_tag(@event.image) %>
 </p>
 
 <p>
-  <strong>Edit:</strong>
-  <%= @event.edit %>
+  <strong>Description:</strong>
+  <%= @event.description %>
 </p>
 
 <p>
-  <strong>Update:</strong>
-  <%= @event.update %>
+  <strong>Date:</strong>
+  <%= @event.date %>
 </p>
 
-<p>
-  <strong>Delete:</strong>
-  <%= @event.delete %>
-</p>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
