@@ -11,7 +11,7 @@
   <body>
     <% if current_user %>
       <p>Logged in as <%= current_user.first_name %></p>
-      <%= link_to 'Log Out', session_path, method: :delete %>
+      <%= link_to 'Log Out', session_path(current_user.id), method: :delete %>
     <% else %>
       <%= link_to 'Log In', new_session_path %>
     <% end %>
