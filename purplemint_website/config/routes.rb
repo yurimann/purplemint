@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :menus
   resources :contact_forms
+  get '/about', to: 'users#about', as: 'about'
 
   resources :events
-  root 'events#index'
+  root 'events#home'
   resources :sessions, only: [:new, :create, :destroy]
 
   resources :password_resets

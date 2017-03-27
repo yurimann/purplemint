@@ -1,0 +1,16 @@
+@import 'variables';
+
+@media only screen and (max-width: 500px){
+
+  .choices{
+    display: block;
+  }
+
+  .slides {
+    margin-left: 25%;
+  }
+
+  .show {
+    padding-top: 10px;
+  }
+}

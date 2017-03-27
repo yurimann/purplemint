@@ -3,8 +3,14 @@ class EventsController < ApplicationController
 
   # GET /events
   # GET /events.json
+  def home
+    @events = Event.paginate(page: params[:page])
+    @recent_events = Event.most_recent
+  end
+
   def index
-    @events = Event.all
+    @events = Event.newest_first.paginate(page: params[:page])
+    @recent_events = Event.most_recent
   end
 
   # GET /events/1
@@ -69,6 +75,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:new, :create, :edit, :update, :delete)
+      params.require(:event).permit(:name, :description, :image, :date)
     end
 end

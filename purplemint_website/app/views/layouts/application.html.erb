@@ -9,14 +9,23 @@
   </head>
 
   <body>
+    <a href="/"><img class="banner" src="http://i.imgur.com/JqWLElo.png" /></a>
+    <nav>
+      <ul class="navigation">
+        <li class="choices"><%= link_to 'ABOUT', about_path %></li>
+        <li class="choices"><%= link_to 'MENU', menus_path %></li>
+        <li class="choices"><%= link_to 'EVENTS', events_path %></li>
+        <li class="choices"><%= link_to 'CONTACT US', new_contact_form_path %></li>
+    </nav>
     <% if current_user %>
       <p>Logged in as <%= current_user.first_name %></p>
       <%= link_to 'Log Out', session_path(current_user.id), method: :delete %>
-    <% else %>
-      <%= link_to 'Log In', new_session_path %>
-        <%= link_to 'Forgot password?', new_password_reset_path %>
-    <% end %>
+      <% end %>
+    <%# else %>
+      <%# link_to 'Log In', new_session_path %>
+        <%# link_to 'Forgot password?', new_password_reset_path %>
+    <%# end %>
     <%= yield %>
   </body>
-  <%= console %>
+  <%# console %>
 </html>
