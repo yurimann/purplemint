@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @menu.name %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @menu.image %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @menu.description %>
-</p>
-
+<div class="menu-show">
+  <h1><%= @menu.name %></h1>
+  <p><%= @menu.description %></p>
+  <h3>Entrees</h3>
+  <% @menu.entrees.each do |entree| %>
+    <p><%= entree.name %><p>
+  <% end %>
+  <h3>Desserts</h3>
+  <% @menu.desserts.each do |dessert| %>
+    <p><%= dessert.name %></p>
+  <% end %>
+  <h3>Beverages</h3>
+  <% @menu.beverages.each do |beverage| %>
+    <p><%= beverage.name %></p>
+  <% end %>
+</div>
 <%= link_to 'Edit', edit_menu_path(@menu) %> |
 <%= link_to 'Back', menus_path %>

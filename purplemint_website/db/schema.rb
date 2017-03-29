@@ -10,7 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170326193604) do
+ActiveRecord::Schema.define(version: 20170329212029) do
+
+  create_table "beverages", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "beverages_menus", id: false, force: :cascade do |t|
+    t.integer "menu_id",     null: false
+    t.integer "beverage_id", null: false
+  end
+
+  create_table "desserts", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "desserts_menus", id: false, force: :cascade do |t|
+    t.integer "menu_id",    null: false
+    t.integer "dessert_id", null: false
+  end
+
+  create_table "entrees", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "entrees_menus", id: false, force: :cascade do |t|
+    t.integer "menu_id",   null: false
+    t.integer "entree_id", null: false
+  end
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -27,6 +60,9 @@ ActiveRecord::Schema.define(version: 20170326193604) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "entree"
+    t.string   "beverage"
+    t.string   "dessert"
   end
 
   create_table "users", force: :cascade do |t|

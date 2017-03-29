@@ -1,18 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Buffet Packages</h1>
-<h2>Basic</h2>
-<div class="menu">
-  <h3>SET A</h3>
-  <strong>HOT ENTREÉS</strong>
-  <p>Pork Humba</p>
-  <p>Tuna and Vegetable Spring Rolls</p>
-  <p>Young Corn in Oyster Sauce</p>
-  <p>Steamed Pandan Rice</p>
-  <strong>PASTA</strong>
-  <p>Vigan Longganisa Pasta</p>
-  <strong>DESSERTS</strong>
-  <p>Leche Flan</p>
-  <strong>BEVERAGE</strong>
-  <p>Lemongrass Cooler</p>
-</div>
+<% @menus.each do |menu| %>
+  <div class="menu-show">
+    <h2><%= menu.name %></h2>
+    <p><%= menu.description %></p>
+    <h3>Entrees</h3>
+    <% menu.entrees.each do |entree| %>
+      <p><%= entree.name %><p>
+    <% end %>
+    <h3>Desserts</h3>
+    <% menu.desserts.each do |dessert| %>
+      <p><%= dessert.name %></p>
+    <% end %>
+    <h3>Beverages</h3>
+    <% menu.beverages.each do |beverage| %>
+      <p><%= beverage.name %></p>
+    <% end %>
+    <%= link_to 'Edit', edit_menu_path(menu) %> | <%= link_to 'Delete', menu, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+<% end %>
