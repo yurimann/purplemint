@@ -1,6 +1,9 @@
 <h1>Editing Menu</h1>
+<% if current_user %>
+  <%= render 'form', menu: @menu %>
 
-<%= render 'form', menu: @menu %>
-
-<%= link_to 'Show', @menu %> |
-<%= link_to 'Back', menus_path %>
+  <%= link_to 'Show', @menu %> |
+  <%= link_to 'Back', menus_path %>
+<% else %>
+  <p>Sorry you cannot view this page</p>
+<% end %>

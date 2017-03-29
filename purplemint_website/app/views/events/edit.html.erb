@@ -1,6 +1,9 @@
 <h1>Editing Event</h1>
+<% if current_user %>
+  <%= render 'form', event: @event %>
 
-<%= render 'form', event: @event %>
-
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
+  <%= link_to 'Show', @event %> |
+  <%= link_to 'Back', events_path %>
+<% else %>
+  <p>Sorry you cannot view this page</p>
+<% end %>

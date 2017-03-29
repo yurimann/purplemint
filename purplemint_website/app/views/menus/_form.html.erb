@@ -17,11 +17,6 @@
   </div>
 
   <div class="field">
-    <%= f.label :image %>
-    <%= f.text_field :image %>
-  </div>
-
-  <div class="field">
     <%= f.label :description %>
     <%= f.text_area :description %>
   </div>
@@ -30,7 +25,7 @@
   <%= f.fields_for :entrees do |entree| %>
     <%= render 'entree_fields', f: entree %>
   <% end %>
-  <%= link_to_add_association "add entree", f, :entrees %>
+  <%= link_to_add_association "Add entree", f, :entrees %>
   </div>
 
   <div class="field">
@@ -45,6 +40,11 @@
     <%= render 'beverage_fields', f: beverage %>
   <% end %>
   <%= link_to_add_association "Add beverage", f, :beverages %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.text_field :price %>
   </div>
 
   <div class="actions">
