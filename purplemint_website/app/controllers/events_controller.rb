@@ -6,6 +6,7 @@ class EventsController < ApplicationController
   def home
     @events = Event.paginate(page: params[:page])
     @recent_events = Event.most_recent
+    @images = Image.all
   end
 
   def index

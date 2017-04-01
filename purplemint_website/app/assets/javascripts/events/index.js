@@ -3,7 +3,6 @@ $(document).on("turbolinks:load",function(){
 
   $('.sprocket').on('click', function(e){
     e.stopPropagation();
-    console.log('clicked');
     $('.choices').fadeToggle();
   });
 })

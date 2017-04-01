@@ -1,22 +1,32 @@
+<div class="menu-index">
 <p id="notice"><%= notice %></p>
-
 <h1>Buffet Packages</h1>
-<% @menus.each do |menu| %>
-  <div class="menu-show">
-    <h2><%= menu.name %></h2>
-    <p><%= menu.description %></p>
-    <h3>Entrees</h3>
-    <% menu.entrees.each do |entree| %>
-      <p><%= entree.name %><p>
+  <div class="all-menus">
+    <% @menus.each do |menu| %>
+      <div class="menu-show">
+        <h2><%= menu.name %></h2>
+        <p><%= menu.description %></p>
+        </br>
+        <h3>Entrees</h3>
+        <% menu.entrees.each do |entree| %>
+          <p><%= entree.name %><p>
+        <% end %>
+        </br>
+        <h3>Desserts</h3>
+        <% menu.desserts.each do |dessert| %>
+          <p><%= dessert.name %></p>
+        <% end %>
+        </br>
+        <h3>Beverages</h3>
+        <% menu.beverages.each do |beverage| %>
+          <p><%= beverage.name %></p>
+        <% end %>
+        </br>
+        <p><strong><%= menu.price %></strong></p>
+        <% if current_user %>
+          <%= link_to 'Edit', edit_menu_path(menu) %> | <%= link_to 'Delete', menu, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </div>
     <% end %>
-    <h3>Desserts</h3>
-    <% menu.desserts.each do |dessert| %>
-      <p><%= dessert.name %></p>
-    <% end %>
-    <h3>Beverages</h3>
-    <% menu.beverages.each do |beverage| %>
-      <p><%= beverage.name %></p>
-    <% end %>
-    <%= link_to 'Edit', edit_menu_path(menu) %> | <%= link_to 'Delete', menu, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
-<% end %>
+</div>

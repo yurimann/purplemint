@@ -8,6 +8,9 @@
   font-family: "HelveticaNeue-light","helvetica neue", helvetica, arial, sans-serif;
 }
 
+html {
+  max-width: 1220px;
+}
 a {
   text-decoration: none;
   color: $primary-font;
@@ -16,6 +19,33 @@ a {
 a:hover {
   text-decoration: underline;
   font-weight: bold;
+}
+
+body {
+  margin-bottom: 20px;
+  max-width: 1024px;
+}
+
+h1 {
+  font-size: 1.75em;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.1em;
+}
+
+h1, h2, h3 {
+  color: $primary-font;
+}
+
+.all-menus {
+  display: block;
+  text-align: center;
 }
 
 .banner {
@@ -34,9 +64,33 @@ background: $secondary-background;
 
 .choices {
   display: inline-block;
-  padding: 10px 30px;
+  padding: 10px 5%;
+}
+
+.show-image {
+  width: 75%;
+  display: block;
+}
+
+.menu-show, .event-index {
+  text-align: center;
+  border: 2px solid black;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 5px;
+  background: linear-gradient($secondary-background, #fff);
+  box-shadow: $drop-shadow;
 }
 
 .owl-carousel {
   padding-top: 10px;
+}
+
+.menu-show-page {
+  .menu-show {
+    display: block;
+    width: 90%;
+    margin-bottom: 10px;
+    margin: auto;
+  }
 }

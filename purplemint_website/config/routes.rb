@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :images
   resources :menus
   resources :contact_forms
   get '/about', to: 'users#about', as: 'about'

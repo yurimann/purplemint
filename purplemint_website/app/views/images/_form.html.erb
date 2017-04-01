@@ -1,0 +1,12 @@
+<%= form_for @image do |f| %>
+  
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :image_url %>
+    <%= f.text_field :image %>
+  </div>
+  <%= f.submit %>
+<% end %>

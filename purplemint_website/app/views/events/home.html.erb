@@ -1,7 +1,7 @@
 <div class="owl-carousel">
-  <% @recent_events.each do |event| %>
+  <% @images.each do |image| %>
     <div class="slides">
-      <%= link_to image_tag(event.image, class: 'slideshow', size: '200x200'), event_path(event.id)  %>
+      <%= image_tag(image.image, class: 'slideshow', width: '200') %>
     </div>
   <% end %>
 </div>
