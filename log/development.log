@@ -1,0 +1,47 @@
+Started GET "/" for ::1 at 2017-04-03 17:07:27 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (17.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#home as HTML
+  Rendering events/home.html.erb within layouts/application
+  [1m[36mImage Load (15.5ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  Rendered events/home.html.erb within layouts/application (63.3ms)
+Started GET "/about" for ::1 at 2017-04-03 17:07:34 -0400
+Completed 200 OK in 15275ms (Views: 15150.1ms | ActiveRecord: 54.8ms)
+
+
+Started GET "/" for ::1 at 2017-04-03 17:07:43 -0400
+Started GET "/menus" for ::1 at 2017-04-03 17:07:43 -0400
+Started GET "/about" for ::1 at 2017-04-03 17:07:43 -0400
+Processing by UsersController#about as HTML
+Processing by EventsController#home as HTML
+  Rendering events/home.html.erb within layouts/application
+  [1m[36mImage Load (1.9ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  Rendered events/home.html.erb within layouts/application (7.4ms)
+  Rendering users/about.html.erb within layouts/application
+  Rendered users/about.html.erb within layouts/application (0.7ms)
+Processing by UsersController#about as HTML
+  Rendering users/about.html.erb within layouts/application
+  Rendered users/about.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 512ms (Views: 490.2ms | ActiveRecord: 1.9ms)
+
+
+Completed 200 OK in 338ms (Views: 331.4ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 686ms (Views: 673.9ms | ActiveRecord: 0.0ms)
+
+
+Processing by MenusController#index as HTML
+Started GET "/" for ::1 at 2017-04-03 17:07:44 -0400
+Processing by EventsController#home as HTML
+  Rendering menus/index.html.erb within layouts/application
+  Rendering events/home.html.erb within layouts/application
+  [1m[36mImage Load (2.3ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  Rendered events/home.html.erb within layouts/application (5.2ms)
+  [1m[36mMenu Load (23.3ms)[0m  [1m[34mSELECT "menus".* FROM "menus"[0m
+  Rendered menus/index.html.erb within layouts/application (90.8ms)
+Completed 200 OK in 455ms (Views: 287.7ms | ActiveRecord: 45.9ms)
+
+
+Completed 200 OK in 360ms (Views: 347.8ms | ActiveRecord: 2.3ms)
+
+
