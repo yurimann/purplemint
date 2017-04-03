@@ -45,3 +45,8 @@ Completed 200 OK in 455ms (Views: 287.7ms | ActiveRecord: 45.9ms)
 Completed 200 OK in 360ms (Views: 347.8ms | ActiveRecord: 2.3ms)
 
 
+  [1m[36mUser Load (75.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (9.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (61.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "crypted_password", "salt", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Yuri"], ["last_name", "Manahan"], ["email", "yuri.manahan@gmail.com"], ["crypted_password", "$2a$10$HpgkKAcUNY7Sz33fy.L6Vec003C9IgK0eX2Y3ZL44/dSu0f637VR6"], ["salt", "2nE1ftpkzqn463Z3z6Hz"], ["created_at", 2017-04-03 21:43:25 UTC], ["updated_at", 2017-04-03 21:43:25 UTC], ["role", "admin"]]
+  [1m[35m (23.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
