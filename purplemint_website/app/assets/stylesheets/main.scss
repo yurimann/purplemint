@@ -29,6 +29,7 @@ body {
 h1 {
   font-size: 1.75em;
   text-align: center;
+  padding-top: 20px;
 }
 
 h2 {
@@ -72,7 +73,34 @@ background: $secondary-background;
   display: block;
 }
 
-.menu-show, .event-index {
+.about {
+  border: 2px solid black;
+  margin: 20px 10px 10px;
+  border-radius: 10px;
+  padding: 5px;
+  background: linear-gradient($secondary-background, #fff);
+  box-shadow: $drop-shadow;
+
+  p {
+    padding: 10px;
+  }
+}
+
+.contact {
+  text-align: center;
+  width: 50%;
+  .field{
+    padding: 10px;
+    font-weight: bold;
+  }
+}
+
+.form-control {
+  width: 60%;
+  line-height: 1.5;
+}
+
+.menu-show, .event-index, .contact {
   text-align: center;
   border: 2px solid black;
   margin: 10px;
@@ -80,6 +108,12 @@ background: $secondary-background;
   padding: 5px;
   background: linear-gradient($secondary-background, #fff);
   box-shadow: $drop-shadow;
+}
+
+.contact {
+  display: block;
+  margin: auto;
+  margin-top: 20px;
 }
 
 .owl-carousel {
@@ -93,4 +127,8 @@ background: $secondary-background;
     margin-bottom: 10px;
     margin: auto;
   }
+}
+
+#message {
+  height: 7em;
 }
