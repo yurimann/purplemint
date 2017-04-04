@@ -50,3 +50,114 @@ Completed 200 OK in 360ms (Views: 347.8ms | ActiveRecord: 2.3ms)
   [1m[35mSQL (61.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "crypted_password", "salt", "created_at", "updated_at", "role") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["first_name", "Yuri"], ["last_name", "Manahan"], ["email", "yuri.manahan@gmail.com"], ["crypted_password", "$2a$10$HpgkKAcUNY7Sz33fy.L6Vec003C9IgK0eX2Y3ZL44/dSu0f637VR6"], ["salt", "2nE1ftpkzqn463Z3z6Hz"], ["created_at", 2017-04-03 21:43:25 UTC], ["updated_at", 2017-04-03 21:43:25 UTC], ["role", "admin"]]
   [1m[35m (23.6ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for ::1 at 2017-04-04 17:23:10 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (24.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#home as HTML
+  Rendering events/home.html.erb within layouts/application
+  [1m[36mImage Load (22.7ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  Rendered events/home.html.erb within layouts/application (54.1ms)
+Completed 200 OK in 2356ms (Views: 2021.9ms | ActiveRecord: 37.2ms)
+
+
+Started GET "/sessions/new" for ::1 at 2017-04-04 17:24:46 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (56.5ms)
+Completed 200 OK in 1216ms (Views: 1172.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/password_resets/new" for ::1 at 2017-04-04 17:24:50 -0400
+Processing by PasswordResetsController#new as HTML
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 178ms (Views: 173.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/password_resets" for ::1 at 2017-04-04 17:24:55 -0400
+Processing by PasswordResetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PvkkabWmGq0bF8me1JGCnVX+fLDnnZvswI2NRiVfrH5WnZ9mjEzP8HV7DhOziA3LJQ4o+8cb0r9Eo4RRctiS3A==", "email"=>"yuri.manahan@gmail.com", "commit"=>"Reset my password!"}
+  [1m[36mUser Load (64.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "yuri.manahan@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (56.9ms)[0m  [1m[33mUPDATE "users" SET "reset_password_token" = 'm1fnXDPoNPeKy5MSzE5F', "reset_password_email_sent_at" = '2017-04-04 21:24:56.012557' WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering user_mailer/reset_password_email.html.erb within layouts/mailer
+  Rendered user_mailer/reset_password_email.html.erb within layouts/mailer (2.4ms)
+  Rendering user_mailer/reset_password_email.text.erb within layouts/mailer
+  Rendered user_mailer/reset_password_email.text.erb within layouts/mailer (0.8ms)
+UserMailer#reset_password_email: processed outbound mail in 421.2ms
+Sent mail to yuri.manahan@gmail.com (3416.8ms)
+Date: Tue, 04 Apr 2017 17:24:56 -0400
+From: bitmakersandbox@gmail.com
+To: yuri.manahan@gmail.com
+Message-ID: <58e40f2881daf_ab963ffc77edbf589017@MacBook-Pro-3.local.mail>
+Subject: Reset your purplemintcatering.com password
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_58e40f287c6e3_ab963ffc77edbf588936";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_58e40f287c6e3_ab963ffc77edbf588936
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hello, Yuri
+===============================================
+
+You have requested to reset your password.
+
+To choose a new password, just follow this link: http://localhost:3000/password_resets/m1fnXDPoNPeKy5MSzE5F/edit.
+
+Have a great day!
+
+
+----==_mimepart_58e40f287c6e3_ab963ffc77edbf588936
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hello Yuri</h1>
+    <p>
+      You have requested to reset your password.</p>
+    <p>
+      To choose a new password, just follow this link: http://localhost:3000/password_resets/m1fnXDPoNPeKy5MSzE5F/edit.
+    </p>
+    <p>Have a great day!</p>
+  </body>
+</html>
+
+  </body>
+</html>
+
+----==_mimepart_58e40f287c6e3_ab963ffc77edbf588936--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 4586ms (ActiveRecord: 172.5ms)
+
+
+Started GET "/" for ::1 at 2017-04-04 17:24:59 -0400
+Processing by EventsController#home as HTML
+  Rendering events/home.html.erb within layouts/application
+  [1m[36mImage Load (1.0ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  Rendered events/home.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 207ms (Views: 192.1ms | ActiveRecord: 4.2ms)
+
+
