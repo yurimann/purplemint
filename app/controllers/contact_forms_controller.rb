@@ -6,9 +6,9 @@ class ContactFormsController < ApplicationController
   def create
 
       @contact = ContactForm.new(contact_form_params)
-      
       if @contact.deliver
-        flash.now[:notice] = "Thank you for your message"
+        flash[:notice] = "Thank you for your message"
+        redirect_to root_path
       else
         flash[:error] = "Sorry this message was not delivered"
         render :new

@@ -280,3 +280,60 @@ Processing by PasswordResetsController#edit as HTML
 Completed 200 OK in 1790ms (Views: 1758.2ms | ActiveRecord: 13.7ms)
 
 
+Started GET "/contact_forms/new" for ::1 at 2017-04-04 18:01:03 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ContactFormsController#new as HTML
+  Rendering contact_forms/new.html.erb within layouts/application
+  Rendered contact_forms/new.html.erb within layouts/application (33.5ms)
+Completed 200 OK in 995ms (Views: 906.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/contact_forms" for ::1 at 2017-04-04 18:01:13 -0400
+Processing by ContactFormsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d0160+5dRGUNjZ8N+Cvb0FcDP75yL2wo2DUq12zt9EgfKcHc17eROGPhWICfMlSGJ/Nr9VKpJXtcGyPAO2rK6g==", "first_name"=>"Yuri", "last_name"=>"Manahan", "phone"=>"6476362085", "email"=>"yuri.manahan@gmail.com", "message"=>"ertretet", "commit"=>"Send!"}
+Unpermitted parameters: utf8, authenticity_token, commit
+  Rendering /Users/macbook/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/mail_form-1.6.0/lib/mail_form/views/mail_form/contact.erb
+  Rendered /Users/macbook/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/mail_form-1.6.0/lib/mail_form/views/mail_form/contact.erb (1071.0ms)
+MailForm::Notifier#contact: processed outbound mail in 1569.3ms
+Sent mail to bitmakersandbox@gmail.com (2168.6ms)
+Date: Tue, 04 Apr 2017 18:01:16 -0400
+From: Yuri <yuri.manahan@gmail.com>
+To: bitmakersandbox@gmail.com
+Message-ID: <58e417ac227b5_ad753fc4c10188c45884d@MacBook-Pro-3.local.mail>
+Subject: Purple Mint Website Contact Form
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<h4 style="text-decoration:underline">Purple Mint Website Contact Form</h4>
+
+
+  <p><b>First name:</b>
+  Yuri</p>
+
+  <p><b>Last name:</b>
+  Manahan</p>
+
+  <p><b>Phone:</b>
+  6476362085</p>
+
+  <p><b>Email:</b>
+  yuri.manahan@gmail.com</p>
+
+  <p><b>Message:</b>
+  ertretet</p>
+
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 4302ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-04 18:01:18 -0400
+Processing by EventsController#home as HTML
+  Rendering events/home.html.erb within layouts/application
+  [1m[36mImage Load (1.1ms)[0m  [1m[34mSELECT "images".* FROM "images"[0m
+  Rendered events/home.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 247ms (Views: 184.0ms | ActiveRecord: 4.2ms)
+
+
