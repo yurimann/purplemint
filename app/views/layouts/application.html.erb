@@ -9,6 +9,14 @@
   </head>
 
   <body>
+    <div class="flashes">
+      <% if flash[:notice] %>
+        <p id="notice"><%= flash[:notice] %></p>
+      <% end %>
+      <% if flash[:alert] %>
+        <p id="alert"><%= flash[:alert] %></p>
+      <% end %>
+    </div>
     <div class="top-image">
       <a href="/"><img class="banner" src="http://i.imgur.com/JqWLElo.png" /></a>
     </div>
