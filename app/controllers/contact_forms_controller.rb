@@ -6,7 +6,7 @@ class ContactFormsController < ApplicationController
   def create
 
       @contact = ContactForm.new(contact_form_params)
-      byebug
+      
       if @contact.deliver
         flash.now[:notice] = "Thank you for your message"
       else
