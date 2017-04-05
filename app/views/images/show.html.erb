@@ -1,1 +1,2 @@
 <%= image_tag(@image.image, class: 'show-image') %>
+<%= link_to "Delete image", @image,  method: :delete, data: { confirm: 'Are you sure?' } %>
