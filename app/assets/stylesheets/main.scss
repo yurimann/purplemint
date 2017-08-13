@@ -56,6 +56,7 @@ h1, h2, h3 {
 
 .slideshow {
   display: block;
+  border-radius: 20px;
 }
 
 .navigation {
@@ -132,6 +133,8 @@ background: $secondary-background;
 .admin-access {
   text-align: center;
 }
+
+
 
 #message {
   height: 7em;

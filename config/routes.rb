@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :menus
   resources :contact_forms
   get '/about', to: 'users#about', as: 'about'
+  get '/admin', to: 'sessions#new', as: 'admin'
 
   resources :events
   root 'events#home'
