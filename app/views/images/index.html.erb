@@ -1,0 +1,6 @@
+<p class="admin-access"><%= link_to "Add new image", new_image_path %></p>
+<br/><br/>
+<% @images.each do |image| %>
+  <%= image_tag(image.image, class: 'show-image') %>
+  <p class="admin-access"><%= link_to("Edit", edit_image_path(image.id)) %> | <%= link_to "Delete image", image,  method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<% end %>

@@ -1,3 +1,6 @@
+<% if current_user %>
+<div class="admin-access"><%= link_to "Add new menu", new_menu_path %></div>
+<% end %>
 <div class="menu-index">
 <p id="notice"><%= notice %></p>
 <h1>Buffet Packages</h1>
@@ -24,7 +27,7 @@
         </br>
         <p><strong><%= menu.price %></strong></p>
         <% if current_user %>
-          <%= link_to 'Edit', edit_menu_path(menu) %> | <%= link_to 'Delete', menu, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <p class="admin-access"><%= link_to 'Edit', edit_menu_path(menu) %> | <%= link_to 'Delete', menu, method: :delete, data: { confirm: 'Are you sure?' } %></p>
         <% end %>
       </div>
     <% end %>

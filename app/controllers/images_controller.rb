@@ -1,7 +1,12 @@
 class ImagesController < ApplicationController
+  def index
+      @images = Image.all
+  end
+
   def new
     @image = Image.new
   end
+
   def create
     @image = Image.new(image_params)
     respond_to do |format|
@@ -18,6 +23,7 @@ class ImagesController < ApplicationController
   def show
     @image = Image.find(params[:id])
   end
+
   def edit
     @image = Image.find(params[:id])
   end
@@ -26,7 +32,7 @@ class ImagesController < ApplicationController
     @image = Image.find(params[:id])
     respond_to do |format|
       if @image.update(image_params)
-        format.html { redirect_to @event, notice: 'Image was successfully updated.' }
+        format.html { redirect_to images_path, notice: 'Image was successfully updated.' }
         format.json { render :show, status: :ok, location: @image }
       else
         format.html { render :edit }
@@ -39,7 +45,7 @@ class ImagesController < ApplicationController
     @image = Image.find(params[:id])
     @image.destroy
     respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Image was successfully deleted.' }
+      format.html { redirect_to root_path, notice: 'Image was successfully deleted.' }
       format.json { head :no_content }
     end
   end
